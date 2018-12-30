@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Tian Hao Wang",
+      "authorEmail": "paced@halfbakedstudio.com",
+      "authorUrl": "halfbakedstudio.com"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "generator-wagisus",
+  "version": "0.0.0",
+  "description": "Nuxt.js + Express.js + Google App Engine + GitLab CI/CD Marketing Web App Generator",
+  "homepage": "https://gitlab.com/halfbakedstudio/tools/wagisus",
+  "author": {
+    "name": "Thomas Wang",
+    "email": "paced@halfbakedstudio.com",
+    "url": "https://halfbakedstudio.com"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "marketing",
+    "nuxt",
+    "vue",
+    "gcp",
+    "gitlab",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "yeoman-test": "^1.7.0",
+    "yeoman-assert": "^3.1.0",
+    "eslint": "^5.9.0",
+    "prettier": "^1.15.2",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-config-xo": "^0.25.0",
+    "jest": "^23.5.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "^2.0.1",
+    "chalk": "^2.1.0",
+    "yosay": "^2.0.1"
+  },
+  "scripts": {},
+  "repository": "https://gitlab.com/halfbakedstudio/tools/wagisus.git",
+  "license": "Apache-2.0"
+}
