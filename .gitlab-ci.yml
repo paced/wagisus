@@ -1,6 +1,7 @@
 image: node:11.2.0
 
 stages:
+  - test
   - deploy
   - quality
 
@@ -8,7 +9,7 @@ changelog:
   image: "python:3.5"
   only:
     - tags
-  stage: deploy
+  stage: test
   script:
     - pip install glica
     - python -m glica

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- Changelog must now be updated before trying to publish
+
 ## 0.2.0
 
 - Automatically deployable to NPM via GitLab CI/CD.
