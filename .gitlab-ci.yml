@@ -21,7 +21,7 @@ publish:
   script:
     - export NEW_VERSION=$(git describe --tags)
     - npm --no-git-tag-version --allow-same-version version $NEW_VERSION
-    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN"" > ~/.npmrc
+    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
     - npm publish
 
 code_quality:
