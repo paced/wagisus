@@ -1,0 +1,43 @@
+image: node:11.2.0
+
+stages:
+  - deploy
+  - quality
+
+changelog:
+  image: "python:3.5"
+  only:
+    - tags
+  stage: deploy
+  script:
+    - pip install glica
+    - python -m glica
+
+publish:
+  only:
+    - tags
+  stage: deploy
+  script:
+    - export NEW_VERSION=$(git describe --tags)
+    - npm --no-git-tag-version --allow-same-version version $NEW_VERSION
+    - echo 'https://registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+    - npm publish
+
+code_quality:
+  stage: quality
+  image: docker:stable
+  variables:
+    DOCKER_DRIVER: overlay2
+  allow_failure: true
+  services:
+    - docker:stable-dind
+  script:
+    - export SP_VERSION=$(echo "$CI_SERVER_VERSION" | sed 's/^\([0-9]*\)\.\([0-9]*\).*/\1-\2-stable/')
+    - docker run
+        --env SOURCE_CODE="$PWD"
+        --volume "$PWD":/code
+        --volume /var/run/docker.sock:/var/run/docker.sock
+        "registry.gitlab.com/gitlab-org/security-products/codequality:$SP_VERSION" /code
+  artifacts:
+    reports:
+      codequality: gl-code-quality-report.json
