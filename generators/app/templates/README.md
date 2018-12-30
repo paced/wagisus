@@ -32,3 +32,16 @@ There is no staging and versioning to speak of in this marketing profile project
 5. Optionally, set up a custom domain in Google App Engine.
 
 That's it, hopefully. Please raise an issue if this seems wrong.
+
+## Required Project Changes
+
+These must be done manually for the application to work properly.
+
+1. Add favicons as required: `static/favicon.ico`, `static/favicon-16x16.png`, and `static/favicon-32x32.png`.
+2. Add `assets/images/site-image.png` or whatever social image file you pointed to in generation.
+
+### Optional Project Changes
+
+1. Edit security middleware.
+2. Edit `robots.txt`.
+3. Edit the CI/CD script.
