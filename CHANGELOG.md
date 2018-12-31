@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.2
+
+- Dotfiles are copied with the generation of a new project now.
+- Google Analytics has been deprecated in favour of Google GTags.
+
 ## 0.2.1
 
 - Changelog must now be updated before trying to publish

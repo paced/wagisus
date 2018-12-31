@@ -55,8 +55,8 @@ module.exports = class extends Generator {
       },
       {
         type: 'input',
-        name: 'googleAnalytics',
-        message: 'What is your Google Analytics ID?',
+        name: 'gtag',
+        message: 'What is your Google GTags ID?',
       },
       {
         type: 'input',
@@ -94,7 +94,11 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copy(this.templatePath("application"), this.destinationPath());
+    this.fs.copy(this.templatePath("application/**"), this.destinationPath(), {
+      globOptions: {
+        dot: true
+      }
+    });
 
     this.fs.copyTpl(
       this.templatePath("README.md"),
@@ -114,7 +118,7 @@ module.exports = class extends Generator {
       "locale": this.props.locale,
       "colour": this.props.colour,
       "image": this.props.image,
-      "googleAnalytics": this.props.googleAnalytics,
+      "gtag": this.props.gtag,
       "twitter": {
         "cardType": this.props.twitterCardType,
         "creator": this.props.twitterCreator,

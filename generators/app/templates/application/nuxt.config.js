@@ -17,13 +17,22 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-analytics',
+    '@nuxtjs/google-gtag',
     'nuxt-webfontloader',
     'nuxt-fontawesome',
   ],
   webfontloader: {},
-  'google-analytics': {
-    id: metaVars.googleAnalytics,
+  /*
+   * Google's GTags service. Sort of like Google Analytics 2.0.
+   * 
+   * See docs: https://developers.google.com/analytics/devguides/collection/gtagjs/
+   */
+  'google-gtag': {
+    id: metaVars.gtag,
+    config:{
+      anonymize_ip: true,
+      send_page_view: false, /* Might be necessary to avoid duplicated page track on page reload. */
+    },
   },
   fontawesome: {
     imports: [
